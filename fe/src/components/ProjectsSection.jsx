@@ -3,9 +3,16 @@ import ProjectCard from './ProjectCard';
 import Pagination from './Pagination';
 import { fetchProjects } from '../api/mockApi'; 
 
-const PROJECTS_PER_PAGE = 3; // Tentukan berapa proyek per halaman
+const getProjectsPerPage = () => {
+  const width = window.innerWidth;
+  if (width >= 768 && width < 1024) {
+    return 4; 
+  }
+  return 3; 
+};
 
 const ProjectsSection = () => {
+  const [projectsPerPage, setProjectsPerPage] = useState(getProjectsPerPage());
   const [allProjects, setAllProjects] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -14,11 +21,6 @@ const ProjectsSection = () => {
   useEffect(() => {
     const loadProjectsData = async () => {
       try {
-         // --- KODE UNTUK API ASLI (DIKOMENTARI DULU) ---
-        // const response = await fetch('http://localhost:8080/api/v1/posts');
-        // if (!response.ok) throw new Error('Gagal mengambil data project');
-        // const result = await response.json();
-        // setAllPosts(result.data);
         const result = await fetchProjects();
         setAllProjects(result.data); 
       } catch (err) {
@@ -31,16 +33,21 @@ const ProjectsSection = () => {
     loadProjectsData();
   }, []);
 
-  // Logika untuk menghitung total halaman
-  const totalPages = Math.ceil(allProjects.length / PROJECTS_PER_PAGE);
+  useEffect(() => {
+    const handleResize = () => {
+      setProjectsPerPage(getProjectsPerPage());
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-  // Logika untuk "memotong" data proyek sesuai halaman yang aktif
+  const totalPages = Math.ceil(allProjects.length / projectsPerPage);
+
   const currentProjects = allProjects.slice(
-    (currentPage - 1) * PROJECTS_PER_PAGE,
-    currentPage * PROJECTS_PER_PAGE
+    (currentPage - 1) * projectsPerPage,
+    currentPage * projectsPerPage
   );
 
-  // Fungsi untuk mengubah halaman
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
