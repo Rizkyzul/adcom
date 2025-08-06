@@ -15,6 +15,7 @@ import FAQSection from './components/FaqSection';
 import Footer from './components/Footer';
 import StrukturOrganisasiPage from './pages/StrukturOrganisasiPage'; // <-- Pastikan ini diimpor
 import ScrollToHashElement from './utils/ScrollToHashElement'; // ← import dulu
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
                 <BlogSection />
                 <Gallery />
                 <FAQSection />
+                <ScrollToTopButton/>
               </>
             } />
             <Route path="/projects/:slug" element={<ProjectDetailPage />} />
