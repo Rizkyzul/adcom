@@ -5,7 +5,7 @@ import teamPhoto from '../assets/team-foto.jpeg';
 
 const AboutSection = () => {
   return (
-   <section className="bg-white py-16">
+   <section className="bg-white py-16" data-aos='fade-up' data-aos-delay='200'>
   <div className="container mx-auto px-6 max-w-6xl">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       

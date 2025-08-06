@@ -42,8 +42,8 @@ const benefits = [
 
 const BenefitsSection = () => {
   return (
-    <section className="bg-white py-20">
-      <div className="container mx-auto px-6 text-center">
+    <section className="bg-white py-20" data-aos="fade-up" data-aos-delay="200" >
+      <div className="container mx-auto px-6 text-center" >
         <h2 className="text-3xl font-bold text-gray-800 mb-12">
           Goals & Benefit
         </h2>

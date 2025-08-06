@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImage from '../assets/hero-image.jpg';
+import heroImage from '../assets/team-foto.jpeg';
 import avatar1 from '../assets/avatars/avatar1.svg';
 import avatar2 from '../assets/avatars/avatar2.svg';
 import avatar3 from '../assets/avatars/avatar3.svg';
@@ -7,12 +7,14 @@ import avatar3 from '../assets/avatars/avatar3.svg';
 
 const Hero = () => {
   return (
-    <section className="bg-white py-20">
-      <div className="container mx-auto px-6">
+    <section className="bg-white py-20 " data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+      <div className="container mx-auto px-6 ">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           
           {/* Kolom Kiri: Teks */}
-          <div className="text-left">
+          <div className="text-left order-last md:order-first"
+          //  data-aos="fade-right" 
+          >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
               Android Developer Community
             </h1>
@@ -20,9 +22,11 @@ const Hero = () => {
               Bersama-sama kita dapat menggali potensi, berbagi wawasan, dan membentuk masa depan inovasi digital. Bergabunglah dengan komunitas ini, di mana batasan diuji dan kreativitas tidak terbatas.
             </p>
             <div className="flex flex-col items-start">
+              <a href="https://www.instagram.com/adcom_official/" target="_blank">
               <button className="bg-green-800 text-white font-bold py-3 px-8 rounded-full hover:bg-green-600 transition-colors shadow-lg mb-6">
                 Join The Community
               </button>
+              </a>
               <div className="flex items-center">
                 <div className="flex -space-x-2">
                   <img src={avatar1} alt="Member 1" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
@@ -37,11 +41,13 @@ const Hero = () => {
           </div>
 
           {/* Kolom Kanan: Gambar */}
-          <div className="flex justify-center md:justify-end">
+          <div className="flex justify-center md:justify-end order-first md:order-last"
+          //  data-aos="fade-left"
+          >
             <img 
               src={heroImage} 
               alt="A person using VR" 
-              className="w-full max-w-lg h-auto rounded-l-[100px] rounded-br-[100px]" 
+              className="w-full max-w-lg h-auto rounded-bl-[100px] rounded-tr-[100px]" 
             />
           </div>
 

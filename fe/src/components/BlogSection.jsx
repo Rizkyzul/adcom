@@ -3,23 +3,25 @@ import PostCard from './PostCard';
 import Pagination from './Pagination';
 import { fetchPosts } from '../api/dummyBlog';
 
-const POSTS_PER_PAGE = 3;
+const getPostsPerPage = () => {
+  const width = window.innerWidth;
+  if (width >= 768 && width < 1024) {
+    return 4; // md: tampilkan 4 post
+  }
+  return 3; // default: tampilkan 3 post
+};
 
-// 1. Terima prop 'showTitle' dengan nilai default true
-const BlogSection = ({ showTitle = true }) => { 
+const BlogSection = ({ showTitle = true }) => {
+  const [postsPerPage, setPostsPerPage] = useState(getPostsPerPage());
   const [allPosts, setAllPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Ambil data post dari API (dummy atau real)
   useEffect(() => {
     const loadPostsData = async () => {
       try {
-         // --- KODE UNTUK API ASLI (DIKOMENTARI DULU) ---
-        // const response = await fetch('http://localhost:8080/api/v1/posts');
-        // if (!response.ok) throw new Error('Gagal mengambil data blog');
-        // const result = await response.json();
-        // setAllPosts(result.data);
         const result = await fetchPosts();
         setAllPosts(result.data);
       } catch (err) {
@@ -31,8 +33,21 @@ const BlogSection = ({ showTitle = true }) => {
     loadPostsData();
   }, []);
 
-  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
-  const currentPosts = allPosts.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE);
+  // Update jumlah post per halaman saat window di-resize
+  useEffect(() => {
+    const handleResize = () => {
+      setPostsPerPage(getPostsPerPage());
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const totalPages = Math.ceil(allPosts.length / postsPerPage);
+  const currentPosts = allPosts.slice(
+    (currentPage - 1) * postsPerPage,
+    currentPage * postsPerPage
+  );
 
   const handlePageChange = (page) => {
     if (page > 0 && page <= totalPages) {

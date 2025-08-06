@@ -23,7 +23,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white py-16" >
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-start gap-8">
         {/* Left image */}
         <div className="flex-1">
