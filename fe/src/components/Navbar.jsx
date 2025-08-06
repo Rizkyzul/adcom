@@ -1,16 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; // 1. Import useEffect
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo3d.png';
+import logo from '../assets/logotrans.png';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); // 2. Add state to track scroll
+
+  // 3. Add effect to listen for scroll events
+  useEffect(() => {
+    const handleScroll = () => {
+      // Set state to true if scrolled more than 10px, otherwise false
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    // Add the event listener when the component mounts
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // Empty array ensures this effect runs only once
 
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50">
+    // 4. Make the className dynamic based on the isScrolled state
+    <nav 
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/80 backdrop-blur-md shadow-sm' 
+          : 'bg-transparent'
+      }`}
+    >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         
         {/* Logo */}
-        <a href="/" className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-3 mix-blend-multiply">
           <img src={logo} alt="AndroidDev Logo" className="h-17 mix-blend-multiply" />
         </a>
 
