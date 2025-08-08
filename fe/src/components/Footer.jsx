@@ -23,7 +23,7 @@ const Footer = () => {
             Jl. Perjuangan No.10B, Karyamulya, Kec. Kesambi,<br />
             Kota Cirebon, Jawa Barat 45135
           </p>
-          <p className="text-sm text-gray-400 mt-2">© 2024 Android Developer Community</p>
+          <p className="text-sm text-gray-400 mt-2">© 2025 Android Developer Community</p>
 
           {/* Sosmed */}
           <div className="flex space-x-4 pt-4 text-2xl">
