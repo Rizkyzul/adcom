@@ -23,58 +23,58 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="bg-white py-16" >
-      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-start gap-8">
-        {/* Left image */}
-        <div className="flex-1">
-          <img
-            src="https://i.imgur.com/2rLyoYE.png" // ganti dengan link dari screenshot atau lokal
-            alt="FAQ Illustration"
-            className="rounded-2xl w-full object-cover"
-          />
-        </div>
+   <section className="bg-white py-16">
+  <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-start gap-8">
+    
+    {/* Left Image */}
+    <div className="w-full md:w-1/2">
+      <img
+        src="https://i.imgur.com/2rLyoYE.png"
+        alt="FAQ Illustration"
+        className="w-full h-auto object-cover rounded-2xl"
+      />
+    </div>
 
-        {/* FAQ Content */}
-        <div className="flex-1">
-          <h2 className="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="border border-black/20 rounded-xl transition-all"
+    {/* FAQ Content */}
+    <div className="w-full md:w-1/2">
+      <h2 className="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
+      <div className="space-y-4">
+        {faqs.map((faq, index) => (
+          <div
+            key={index}
+            className="border border-black/20 rounded-xl transition-all"
+          >
+            <button
+              onClick={() => toggle(index)}
+              className="w-full text-left px-6 py-4 flex items-center justify-between font-medium"
+            >
+              <span className="text-sm">{faq.question}</span>
+              <svg
+                className={`w-5 h-5 transform transition-transform ${
+                  openIndex === index ? 'rotate-180' : ''
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                <button
-                  onClick={() => toggle(index)}
-                  className="w-full text-left px-6 py-4 flex items-center justify-between font-medium"
-                >
-                  <span className='text-sm'>{faq.question}</span>
-                  <svg
-                    className={`w-5 h-5 transform transition-transform ${
-                      openIndex === index ? 'rotate-180' : ''
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-                {openIndex === index && (
-                  <div className="px-6 pb-4 text-gray-700">
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
-            ))}
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            {openIndex === index && (
+              <div className="px-6 pb-4 text-gray-700">{faq.answer}</div>
+            )}
           </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
   );
 };
 
