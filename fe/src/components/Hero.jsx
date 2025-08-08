@@ -46,7 +46,7 @@ const Hero = () => {
           >
             <img 
               src={heroImage} 
-              alt="A person using VR" 
+              alt="adcom team" 
               className="w-full max-w-lg h-auto rounded-bl-[100px] rounded-tr-[100px]" 
             />
           </div>
