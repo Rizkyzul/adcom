@@ -5,11 +5,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* html, body {
-  overflow-x: hidden;
-  overflow-y: visible;
-} */
-
 .mastering-section {
   background-color: white;
   padding: 4rem 0;
