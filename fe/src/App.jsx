@@ -16,26 +16,26 @@ import Footer from './components/Footer';
 import StrukturOrganisasiPage from './pages/StrukturOrganisasiPage'; // <-- Pastikan ini diimpor
 import ScrollToHashElement from './utils/ScrollToHashElement'; // ← import dulu
 import ScrollToTopButton from './components/ScrollToTopButton';
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
-// import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 
 
 function App() {
-//   useEffect(() => {
-//   AOS.init({
-//     duration: 800,
-//     once: false,
-//     offset:100,
-//   });
-// }, []);
+  useEffect(() => {
+  AOS.init({
+    duration: 800,
+    once: false,
+    offset:100,
+  });
+}, []);
 
   return (
     <BrowserRouter>
       <ScrollToHashElement />
       <Navbar />
-      <main>
+      <main className='px-4 md:px-16 lg:px-24 overflow-x-hidden'>
         <div>
           <Routes>
             <Route path="/" element={
