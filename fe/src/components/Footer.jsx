@@ -50,26 +50,26 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4 text-lg">About Adcom</h3>
             <ul className="space-y-3 text-sm text-gray-300">
-              <li><a href="#" className="hover:underline">E-Learning</a></li>
-              <li><a href="#" className="hover:underline">Division</a></li>
-              <li><a href="#" className="hover:underline">Gallery</a></li>
-              <li><a href="#" className="hover:underline">Blog</a></li>
-              <li><a href="#" className="hover:underline">FAQ</a></li>
-              <li><a href="#" className="hover:underline">Contact Us</a></li>
+              <li><a href="/#division" className="hover:underline">Division</a></li>
+               <li><a href="/#project" className="hover:underline">project</a></li>
+              <li><a href="/#gallery" className="hover:underline">Gallery</a></li>
+              <li><a href="/#blog" className="hover:underline">Blog</a></li>
+              <li><a href="/#faq" className="hover:underline">FAQ</a></li>
+              <li><a href="/struktur-organisasi" className="hover:underline">Struktur Organisasi</a></li>
             </ul>
           </div>
           <div>
             <h3 className="font-semibold mb-4 text-lg">Mastering Tools</h3>
             <ul className="space-y-3 text-sm text-gray-300">
-              <li><a href="#" className="hover:underline">Javascript</a></li>
-              <li><a href="#" className="hover:underline">PHP</a></li>
-              <li><a href="#" className="hover:underline">Laravel</a></li>
-              <li><a href="#" className="hover:underline">HTML</a></li>
-              <li><a href="#" className="hover:underline">Figma</a></li>
-              <li><a href="#" className="hover:underline">CSS</a></li>
+              <li><a href="https://www.w3schools.com/js/" className="hover:underline" target='_blank' >Javascript</a></li>
+              <li><a href="https://www.php.net/" className="hover:underline" target='_blank' >PHP</a></li>
+              <li><a href="https://laravel.com/" target='_blank'  className="hover:underline">Laravel</a></li>
+              <li><a href="https://www.w3schools.com/html/default.asp" target='_blank'  className="hover:underline">HTML</a></li>
+              <li><a href="https://help.figma.com/hc/en-us/categories/360002051613-Get-started" target='_blank'  className="hover:underline">Figma</a></li>
+              <li><a href="https://www.w3schools.com/css/default.asp" target='_blank'  className="hover:underline">CSS</a></li>
             </ul>
           </div>
-          <diva>
+          <div>
             <h3 className="font-semibold mb-4 text-lg ">Company</h3>
             <ul className="space-y-3 text-sm text-gray-300">
               <li><a href="#" className="hover:underline">About Us</a></li>
@@ -79,7 +79,7 @@ const Footer = () => {
               <li><a href="#" className="hover:underline">Behance</a></li>
               <li><a href="#" className="hover:underline">Dribbble</a></li>
             </ul>
-          </diva>
+          </div>
         </div>
       </div>
     </footer>
