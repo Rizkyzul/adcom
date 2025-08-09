@@ -1,7 +1,7 @@
 import React from "react";
 
 const galleryImages = [
-  "https://i.imgur.com/QkD8TQj.png", // Ganti dengan link asli atau gunakan file lokal jika ada
+  "https://i.imgur.com/QkD8TQj.png", 
   "https://i.imgur.com/2DgJxLh.png",
   "https://i.imgur.com/QkD8TQj.png",
   "https://i.imgur.com/B4iV2aR.png",

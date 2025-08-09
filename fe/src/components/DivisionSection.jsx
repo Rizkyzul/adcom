@@ -49,7 +49,7 @@ const DivisionSection = () => {
               </div>
 
               {/* Gambar */}
-              <div className="flex justify-center" data-aos='fade-left' data-aos-delay="200">
+              <div className="flex justify-center sm:justify-center md:justify-end lg:justify-end" data-aos='fade-left' data-aos-delay="200">
                 <img
                   src={division.imageUrl}
                   alt={division.title}

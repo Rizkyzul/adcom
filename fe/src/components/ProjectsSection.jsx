@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ProjectCard from './ProjectCard';
 import Pagination from './Pagination';
-import { fetchProjects } from '../api/mockApi'; 
+import { fetchProjects } from '../api/dummyProject'; 
 
 const getProjectsPerPage = () => {
   const width = window.innerWidth;

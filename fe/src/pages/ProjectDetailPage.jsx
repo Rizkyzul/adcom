@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-import { fetchProjectBySlug } from '../api/mockApi';
+import { fetchProjectBySlug } from '../api/dummyProject';
 
 const ProjectDetailPage = () => {
   // useParams() mengambil parameter dari URL, dalam kasus ini adalah 'slug'

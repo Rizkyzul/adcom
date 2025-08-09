@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { fetchProjects } from '../api/mockApi'; // Kita tetap pakai mock API untuk proyek
-import GalleryImage from './GalleryImage'; // Kita pakai lagi komponen gambar yang sudah ada
+import { fetchProjects } from '../api/dummyProject';
+import GalleryImage from './GalleryImage';
 
 const GallerySection = () => {
   const [photos, setPhotos] = useState([]);
@@ -14,8 +14,7 @@ const GallerySection = () => {
         // const response = await fetch('http://localhost:8080/api/v1/projects');
         // if (!response.ok) throw new Error('Gagal mengambil data galeri');
         // const result = await response.json();
-        
-        // --- KODE UNTUK DATA DUMMY ---
+  
         const result = await fetchProjects();
         
         // Ambil semua foto dari semua proyek, lalu potong untuk 9 foto pertama
@@ -44,7 +43,6 @@ const GallerySection = () => {
         {error && <p className="text-center text-red-500">Error: {error}</p>}
 
         {!loading && !error && (
-          // Grid 3x3 di layar besar
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {photos.map((photoUrl, index) => (
               <GalleryImage 

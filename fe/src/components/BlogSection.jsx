@@ -56,10 +56,10 @@ const BlogSection = ({ showTitle = true }) => {
   };
 
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-20" id='blog'>
       <div className="container mx-auto px-6">
         
-        {/* 2. Tampilkan judul HANYA JIKA showTitle adalah true */}
+      
         {showTitle && (
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800">Blog</h2>
@@ -67,7 +67,7 @@ const BlogSection = ({ showTitle = true }) => {
           </div>
         )}
 
-        {/* Sisa kode tetap sama */}
+
         <div>
           {loading && <p className="text-center">Loading posts...</p>}
           {error && <p className="text-center text-red-500">Error: {error}</p>}

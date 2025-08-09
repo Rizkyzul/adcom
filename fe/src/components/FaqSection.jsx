@@ -3,15 +3,15 @@ import React, { useState } from 'react';
 const faqs = [
   {
     question: 'Bagaimana cara bergabung dengan Android Developer Community?',
-    answer: 'Kamu bisa bergabung dengan mengisi form pendaftaran di website resmi kami atau datang langsung ke event kami.'
+    answer: 'Ikuti Akun Instagram Kami untuk informasi Pendaftaran Anggota Baru Adcom!'
   },
   {
     question: 'Apa keuntungan bergabung dengan Android Developer Community?',
-    answer: 'Kamu akan mendapatkan akses ke workshop, mentoring, jejaring komunitas, dan berbagai sumber belajar Android Development.'
+    answer: 'Kamu akan mendapatkan akses ke workshop, mentoring, jejaring komunitas, dan berbagai sumber belajar Web Development.'
   },
   {
     question: 'Apakah bergabung dengan Android Developer Community berbayar?',
-    answer: 'Tidak, bergabung dengan komunitas ini gratis dan terbuka untuk siapa saja yang tertarik di bidang Android.'
+    answer: 'Tidak, bergabung dengan komunitas ini gratis dan terbuka untuk siapa saja yang tertarik di Web Development.'
   }
 ];
 
@@ -36,7 +36,7 @@ const FAQSection = () => {
     </div>
 
     {/* FAQ Content */}
-    <div className="w-full md:w-1/2">
+    <div className="w-full md:w-1/2" id='faq'>
       <h2 className="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
       <div className="space-y-4">
         {faqs.map((faq, index) => (
